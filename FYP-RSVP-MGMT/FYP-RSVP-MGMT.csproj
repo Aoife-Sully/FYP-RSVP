@@ -5,4 +5,14 @@
     <RootNamespace>FYP_RSVP_MGMT</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\DietaryRequirements\" />
+    <Folder Include="Views\FoodOptions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+  </ItemGroup>
+
 </Project>
