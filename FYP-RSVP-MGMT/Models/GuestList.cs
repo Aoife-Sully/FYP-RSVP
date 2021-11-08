@@ -21,4 +21,17 @@ namespace FYP_RSVP_MGMT.Models
 
         public string Response { get; set; }
     }
+
+    /* For creating selection lists for drop down forms */
+    public enum GuestType
+    {
+        WeddingGuest, 
+        WeddingPart
+    }
+
+    public enum Repsonse
+    {
+        Accept,
+        Decline
+    }
 }
