@@ -1,13 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using FYP_RSVP_MGMT.ViewModels;
+﻿using Dapper.Contrib.Extensions;
 using FYP_RSVP_MGMT.Helpers;
 using FYP_RSVP_MGMT.Models;
-using Dapper;
-using Dapper.Contrib.Extensions;
+using FYP_RSVP_MGMT.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace FYP_RSVP_MGMT.Controllers
 {
@@ -22,11 +18,12 @@ namespace FYP_RSVP_MGMT.Controllers
 
         public IActionResult CreateUpdate(GuestListViewModel guest)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                using (var db = DbHelpers.GetConnection()) {
+                using (var db = DbHelpers.GetConnection())
+                {
 
-                    if(guest.EditableGuest.GuestID == null)
+                    if (guest.EditableGuest.GuestID == null)
                     {
                         /* Count the existing IDs and adds the next ID */
                         guest.EditableGuest.GuestID = guest.Guests.Count;
@@ -50,9 +47,9 @@ namespace FYP_RSVP_MGMT.Controllers
 
             else
             {
-                return View("Index", new GuestListViewModel());
+                return View("ViewGuestList", new GuestListViewModel());
             }
-           
+
         }
 
         public IActionResult Edit(int Id)
@@ -70,11 +67,19 @@ namespace FYP_RSVP_MGMT.Controllers
             {
                 GuestList guest = db.Get<GuestList>(Id);
 
-                if (guest!= null)
+                if (guest != null)
                     db.Delete(guest);
                 return RedirectToAction("Index");
-                
+
             }
         }
+
+        public IActionResult ViewGuestList()
+        {
+            GuestListViewModel guest = new GuestListViewModel();
+
+            return View(guest);
+        }
     }
+
 }

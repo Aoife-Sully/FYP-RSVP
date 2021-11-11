@@ -8,24 +8,27 @@
 {
     <div class="container" id="GuestRSVP">
 
-        <br/>
-        <br/>
-        <br/>
+        <br />
+        <br />
+        <br />
 
         <h3> Welcome to [Bride] and [Groom]'s Wedding</h3>
         <h4>[Church Location]</h4>
         <h4>[Wedding Date and Time]</h4>
 
-        <div class="container"  id="RSVPTable" style="align-content:center">
+        <div class="container" id="RSVPTable" style="align-content:center">
 
             <table>
 
-                
+                <tr>
+                    <td>@Html.HiddenFor(m => m.EditableGuest.GuestID)</td>
+                </tr>
+
 
                 <tr>
                     <td>Guest Name: </td>
                     <td>@Html.TextBoxFor(m => m.EditableGuest.GuestName)</td>
-                    <td>@Html.HiddenFor(m => m.EditableGuest.GuestID)</td>
+
                 </tr>
 
                 <tr>
@@ -55,7 +58,7 @@
 
 
                 <tr>
-                    <td><button class="btnSubmitRSVP" type="submit"> @(Model.EditableGuest.GuestID > 0? "Update": "Add") </button></td>
+                    <td><button class="btnSubmitRSVP" type="submit"> <a asp-controller="ResponseController" asp-action="Index"></a> @(Model.EditableGuest.GuestID > 0? "Update": "Add") </button></td>
                     <td></td>
                 </tr>
 
@@ -67,3 +70,7 @@
 
     </div>
 }
+
+<br/>
+<br/>
+
