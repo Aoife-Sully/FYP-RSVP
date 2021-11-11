@@ -20,9 +20,12 @@
 
             <table>
 
+                
+
                 <tr>
                     <td>Guest Name: </td>
                     <td>@Html.TextBoxFor(m => m.EditableGuest.GuestName)</td>
+                    <td>@Html.HiddenFor(m => m.EditableGuest.GuestID)</td>
                 </tr>
 
                 <tr>

@@ -17,7 +17,7 @@ namespace FYP_RSVP_MGMT.Controllers
         {
             GuestListViewModel guest = new GuestListViewModel();
 
-            return View(guest);
+            return View("Index", guest);
         }
 
         public IActionResult CreateUpdate(GuestListViewModel guest)
@@ -30,8 +30,6 @@ namespace FYP_RSVP_MGMT.Controllers
                     {
                         /* Count the existing IDs and adds the next ID */
                         guest.EditableGuest.GuestID = guest.Guests.Count;
-
-
 
                         db.Insert<GuestList>(guest.EditableGuest);
                     }
@@ -47,7 +45,7 @@ namespace FYP_RSVP_MGMT.Controllers
                     }
                 }
 
-                return RedirectToAction("Index");
+                return RedirectToAction("ViewGuestList");
             }
 
             else
