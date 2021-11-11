@@ -6,7 +6,7 @@
 
 @using (var form = Html.BeginForm("CreateUpdate", "GuestList", FormMethod.Post))
 {
-    <div class="container">
+    <div class="container" id="GuestRSVP">
 
         <br/>
         <br/>
@@ -14,47 +14,52 @@
 
         <h3> Welcome to [Bride] and [Groom]'s Wedding</h3>
         <h4>[Church Location]</h4>
-        <h4>Wedding Date and Time</h4>
+        <h4>[Wedding Date and Time]</h4>
 
-        <table id="GuestRSVP">
+        <div class="container"  id="RSVPTable" style="align-content:center">
 
-            <tr>
-                <td>Guest Name: </td>
-                <td>@Html.TextBoxFor(m => m.EditableGuest.GuestName)</td>
-            </tr>
+            <table>
 
-            <tr>
-                <td>Guest Type: </td>
-                <td>@Html.DropDownListFor(m => m.EditableGuest.GuestType, new List<SelectListItem> { new SelectListItem {Value = "Guest", Text = "Guest" }, new SelectListItem { Value = "Wedding Party", Text = "Wedding Party" } })</td>
-            </tr>
+                <tr>
+                    <td>Guest Name: </td>
+                    <td>@Html.TextBoxFor(m => m.EditableGuest.GuestName)</td>
+                </tr>
 
-            <tr>
-                <td>Contact Details: </td>
-                <td>@Html.TextBoxFor(m => m.EditableGuest.ContactDetails)</td>
-            </tr>
+                <tr>
+                    <td>Guest Type: </td>
+                    <td>@Html.DropDownListFor(m => m.EditableGuest.GuestType, new List<SelectListItem> { new SelectListItem { Value = "Guest", Text = "Guest" }, new SelectListItem { Value = "Wedding Party", Text = "Wedding Party" } })</td>
+                </tr>
 
-            <tr>
-                <td>Plus One: </td>
-                <td>@Html.CheckBoxFor(m => m.EditableGuest.PlusOne)</td>
-            </tr>
+                <tr>
+                    <td>Contact Details: </td>
+                    <td>@Html.TextBoxFor(m => m.EditableGuest.ContactDetails)</td>
+                </tr>
 
-            <tr>
-                <td>Plus One Name: </td>
-                <td>@Html.TextBoxFor(m => m.EditableGuest.PlusOneName)</td>
-            </tr>
+                <tr>
+                    <td>Plus One: </td>
+                    <td>@Html.CheckBoxFor(m => m.EditableGuest.PlusOne)</td>
+                </tr>
 
-            <tr>
-                <td>RSVP Response:</td>
-                <td>@Html.DropDownListFor(m => m.EditableGuest.Response, new List<SelectListItem> { new SelectListItem {Value = "Accept with Pleasure", Text = "Accept with Pleasure" }, new SelectListItem {Value = "Decline with Regret", Text = "Decline with Regret" } })</td>
-            </tr>
+                <tr>
+                    <td>Plus One Name: </td>
+                    <td>@Html.TextBoxFor(m => m.EditableGuest.PlusOneName)</td>
+                </tr>
 
-           
-            <tr>
-                <td><button type="submit"> @(Model.EditableGuest.GuestID > 0? "Update": "Add") </button></td>
-                <td></td>
-            </tr>
+                <tr>
+                    <td>RSVP Response:</td>
+                    <td>@Html.DropDownListFor(m => m.EditableGuest.Response, new List<SelectListItem> { new SelectListItem { Value = "Accept with Pleasure", Text = "Accept with Pleasure" }, new SelectListItem { Value = "Decline with Regret", Text = "Decline with Regret" } })</td>
+                </tr>
 
-        </table>
+
+                <tr>
+                    <td><button class="btnSubmitRSVP" type="submit"> @(Model.EditableGuest.GuestID > 0? "Update": "Add") </button></td>
+                    <td></td>
+                </tr>
+
+            </table>
+
+
+        </div>
 
 
     </div>

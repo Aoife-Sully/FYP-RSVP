@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'icomoon';
-  src: url("../fonts/icomoon/icomoon.eot?srf3rx");
-  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
 
 /* =======================================================
 *
@@ -46,10 +39,10 @@ p, ul, ol {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #5a5a5a;
-  font-family: "Montez", cursive;
-  font-weight: 400;
-  margin: 0 0 30px 0;
+    color: #5a5a5a;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-weight: 400;
+    margin: 0 0 30px 0;
 }
 
 figure {
@@ -613,11 +606,11 @@ figure {
   color: #fff;
 }
 
-#fh5co-countdown .countdown span {
-  margin: 0 30px;
-  display: inline-block;
-  font-family: "Montez", cursive;
-}
+    #fh5co-countdown .countdown span {
+        margin: 0 30px;
+        display: inline-block;
+        font-family: "Open Sans", Arial, sans-serif;
+    }
 
 #fh5co-countdown .countdown small {
   display: block;
@@ -1267,3 +1260,49 @@ figure {
     #Home {
 
     }
+
+#GuestRSVP {
+    /* Code taken from https://www.w3schools.com/css/css_align.asp */
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Code taken from https://www.w3schools.com/css/tryit.asp?filename=trycss_forms */
+
+#RSVPTable {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+
+input[type=text], [type=checkbox], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit], [type=checkbox] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+} /* end of form code*/
+
+.btnSubmitRSVP {
+    border-radius: 25px;
+    padding: 20px;
+    width: 150px;
+    height: 35px;
+    
+}
