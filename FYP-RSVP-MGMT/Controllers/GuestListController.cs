@@ -50,7 +50,7 @@ namespace FYP_RSVP_MGMT.Controllers
 
             else
             {
-                return View("Index", new GuestList());
+                return View("Index", new GuestListViewModel());
             }
            
         }
