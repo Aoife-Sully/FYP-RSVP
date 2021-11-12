@@ -25,7 +25,7 @@ namespace FYP_RSVP_MGMT.Models
         public string PlusOneName { get; set; }
 
         [Required]
-        public string Response { get; set; }
+        public string GuestResponse { get; set; }
     }
 
    

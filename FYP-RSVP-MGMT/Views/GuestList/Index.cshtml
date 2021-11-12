@@ -21,11 +21,6 @@
             <table>
 
                 <tr>
-                    <td>@Html.HiddenFor(m => m.EditableGuest.GuestID)</td>
-                </tr>
-
-
-                <tr>
                     <td>Guest Name: </td>
                     <td>@Html.TextBoxFor(m => m.EditableGuest.GuestName)</td>
 
@@ -53,7 +48,7 @@
 
                 <tr>
                     <td>RSVP Response:</td>
-                    <td>@Html.DropDownListFor(m => m.EditableGuest.Response, new List<SelectListItem> { new SelectListItem { Value = "Accept with Pleasure", Text = "Accept with Pleasure" }, new SelectListItem { Value = "Decline with Regret", Text = "Decline with Regret" } })</td>
+                    <td>@Html.DropDownListFor(m => m.EditableGuest.GuestResponse, new List<SelectListItem> { new SelectListItem { Value = "Accept", Text = "Accept" }, new SelectListItem { Value = "Decline", Text = "Decline" } })</td>
                 </tr>
 
 
