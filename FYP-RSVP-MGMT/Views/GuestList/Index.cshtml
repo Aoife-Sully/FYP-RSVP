@@ -58,7 +58,10 @@
 
 
                 <tr>
-                    <td><button class="btnSubmitRSVP" type="submit"> <a asp-controller="ResponseController" asp-action="Index"></a> @(Model.EditableGuest.GuestID > 0? "Update": "Add") </button></td>
+                    <td><button class="btnSubmitRSVP" type="submit"> <a asp-controller="GuestList" asp-action="CreateUpdate"></a> @(Model.EditableGuest.GuestID > 0? "Update": "RSVP") </button></td>
+                    @* Code behind these buttons does not work yet  *@
+                    <td><button class="btnSubmitRSVP" type="submit"> <a asp-controller="GuestList" asp-action="Edit"></a> @(Model.EditableGuest.GuestID > 0? "Update": "Edit RSVP") </button></td>
+                    <td><button class="btnSubmitRSVP" type="submit"> <a asp-controller="GuestList" asp-action="Delete"></a> @(Model.EditableGuest.GuestID > 0? "Update": "Delete") </button></td>
                     <td></td>
                 </tr>
 
