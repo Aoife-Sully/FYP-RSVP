@@ -1278,7 +1278,7 @@ figure {
 }
 
 
-input[type=text], [type=checkbox], select {
+input[type=text], [type=checkbox], [type=password], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -1304,5 +1304,10 @@ input[type=submit], [type=checkbox] {
     padding: 20px;
     width: 150px;
     height: 35px;
-    
+}
+
+#Login {
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: center;
 }

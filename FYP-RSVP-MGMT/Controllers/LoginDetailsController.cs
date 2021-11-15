@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FYP_RSVP_MGMT.Helpers;
+using FYP_RSVP_MGMT.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,28 @@ namespace FYP_RSVP_MGMT.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            LoginDetailsViewModel user = new LoginDetailsViewModel();
+
+            return View("Index", user);
+
         }
+
+       // public IActionResult CreateUpdate(LoginDetailsViewModel user)
+        //{
+           // if (ModelState.IsValid)
+            //{
+               // using (var db = DbHelpers.GetConnection())
+                //{
+
+                   // if (user.EditableUser.UserID == null)
+                   // {
+                       // user.EditableUser.GuestID = user.Users.Count;
+                    //}
+                //}
+           // }
+
+        //}
+
     }
+
 }
