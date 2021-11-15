@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FYP_RSVP_MGMT.Controllers
 {
-    public class UserDetailsController : Controller
+    public class LoginDetailsController : Controller
     {
         public IActionResult Index()
         {

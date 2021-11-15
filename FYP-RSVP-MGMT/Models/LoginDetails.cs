@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FYP_RSVP_MGMT.Models
 {
-    public class UserDetails
+    public class LoginDetails
     {
         public int UserID { get; set; }
 
