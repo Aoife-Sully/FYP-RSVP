@@ -29,6 +29,7 @@ namespace FYP_RSVP_MGMT.Controllers
                         guest.EditableGuest.GuestID = guest.Guests.Count;
 
                         db.Insert<GuestList>(guest.EditableGuest);
+
                     }
 
                     /* If the guest already exists, we are updating the details*/
