@@ -43,12 +43,12 @@ namespace FYP_RSVP_MGMT.Controllers
                     }
                 }
 
-                return RedirectToAction("ViewGuestList");
+                return RedirectToAction("ViewGuestList", guest);
             }
 
             else
             {
-                return View("ViewGuestList", new GuestListViewModel());
+                return View("ViewGuestList", new GuestList());
             }
 
         }

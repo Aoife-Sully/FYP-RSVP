@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Dapper.Contrib.Extensions;
 
 namespace FYP_RSVP_MGMT.Models
 {
     public class GuestList
     {
+        [ExplicitKey]
         public int? GuestID { get; set; }
 
         [Required]

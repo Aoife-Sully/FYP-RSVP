@@ -1273,14 +1273,14 @@ figure {
 
 #RSVPTable {
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: #F69D9D;
     padding: 20px;
-    height:500px;
-    width:500px
+    height: 550px;
+    width: 500px
 }
 
 
-input[type=text], [type=checkbox], [type=password], select {
+input[type=text], [type=checkbox],  select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -1290,9 +1290,8 @@ input[type=text], [type=checkbox], [type=password], select {
     box-sizing: border-box;
 }
 
-input[type=submit], [type=checkbox], [type=password] {
+input[type=submit], [type=checkbox] {
     width: 100%;
-    
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -1305,10 +1304,27 @@ input[type=checkbox] {
     transform: scale(1.5);
 }
 
-
-
 #Login {
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     text-align: center;
+}
+
+table {
+    border-spacing: 15px 0;
+    width:100%;
+}
+
+td {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+#rsvp:nth-child(even) {
+    background-color: #fae1dd;
 }

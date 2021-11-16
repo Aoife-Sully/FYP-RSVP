@@ -34,6 +34,16 @@ namespace FYP_RSVP_MGMT.Controllers
 
         //}
 
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+
+        public IActionResult SignUp()
+        {
+            return View();
+        }
     }
 
 }

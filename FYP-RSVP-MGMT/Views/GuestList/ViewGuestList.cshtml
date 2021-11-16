@@ -1,27 +1,27 @@
 ﻿@model FYP_RSVP_MGMT.ViewModels.GuestListViewModel
 
 @{
-    ViewData["Title"] = "View Guest RSVP";
+    ViewData["Title"] = "Guest RSVP";
 }
 
 
-<div class="container">
+<div class="container" style="text-align: center">
 
 
     <table id="CouplesView">
         <tr>
-            <td>Guest Name: </td>
-            <td>Guest Type: </td>
-            <td>Contact Details: </td>
-            <td>Plus One: </td>
-            <td>Plus One Name: </td>
-            <td>Response: </td>
+            <th><b>Guest Name: </b></th>
+            <th><b>Guest Type: </b></th>
+            <th><b>Contact Details: </b></th>
+            <th><b>Plus One: </b></th>
+            <th><b>Plus One Name: </b></th>
+            <th><b>Response: </b></th>
         </tr>
 
 
         @foreach (var guest in Model.Guests)
         {
-            <tr>
+            <tr id="rsvp">
                 <td>@guest.GuestName</td>
                 <td>@guest.GuestType</td>
                 <td>@guest.ContactDetails</td>

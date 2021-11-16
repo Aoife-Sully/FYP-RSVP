@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@* Code taken from: https://www.tutorialspoint.com/questions/question.php?qid=How-to-place-two-divs-next-to-each-other-in-HTML *@
+
+<div class="container" style="align-content:center">
+
+    @*Couple/Guest Registration*@
+    <div id="SignUpForm" style="width: 525px; height: 450px; background: #F69D9D; margin: 10px">
+        <br />
+
+        <h3 id="Login"> Not a member? Sign Up here!</h3>
+
+        <br />
+
+        @* @using (var form = Html.BeginForm( *@
+
+        <label for="EmailAddress">Email Address</label>
+        <input type="text" placeholder="Email Address" name="EmailAddress" id="EmailAddress" />
+        <br />
+
+        <label for="Password">Password</label>
+        <input type="password" placeholder="Password" name="Password" id="Password" />
+        <br />
+
+        <h3>I am a...</h3>
+        <label for="TypeGuest">Guest</label>
+        <input type="radio" name="Guest" id="TypeGuest" />
+
+        <label for="TypeCouple">Couple</label>
+        <input type="radio" name="Couple" id="TypeCouple" />
+
+        <br />
+
+        <button type="submit"> Register </button>
+    </div>
+
+</div> 
