@@ -31,9 +31,9 @@ namespace FYP_RSVP_MGMT.Controllers
                      
                     if (guest.EditableGuest.GuestID == null)
                     {
-                        guest.EditableGuest.GuestID = guest.Guests.Count;
+                        guest.EditableGuest.GuestID = guest.Guests.Count + 1;
 
-                        db.Insert<GuestList>(guest.EditableGuest);
+                        db.InsertAsync<GuestList>(guest.EditableGuest);
                     }
 
                     /* If the guest already exists, we are updating their details */

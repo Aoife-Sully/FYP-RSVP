@@ -14,10 +14,17 @@ LoginDetails View
 GuestRSVP (Views --> GuestList --> Index.cshtml)
 - Code taken to centre div in the middle of the page https://www.w3schools.com/css/css_align.asp
 
+
 RSVPTable (Views --> GuestList --> Index.cshtml)
 - Used to style the form that guests use to submit the RSVP 
 - Code taken and adapted from https://www.w3schools.com/css/tryit.asp?filename=trycss_forms
 
+
 Text Shadowing on Login 
 - Taken from https://www.w3schools.com/css/tryit.asp?filename=trycss3_text-shadow_border 
 
+
+[Table("GuestList")]
+- Prior to this I was getting an invalid object name 'GuestLists'.' but GuestList was no where in the project
+- Dapper assumes that a table will have a pluralised name 
+- 

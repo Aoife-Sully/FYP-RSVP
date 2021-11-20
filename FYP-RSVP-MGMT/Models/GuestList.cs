@@ -7,8 +7,12 @@ using Dapper.Contrib.Extensions;
 
 namespace FYP_RSVP_MGMT.Models
 {
-    public class GuestList
-    {
+    [Table("GuestList")] /* Dapper assumes pluralized table name which breaka the code https://stackoverflow.com/questions/32204808/dapper-use-singular-table-name/32205064*/
+    public class  GuestList  
+        
+    {      
+
+
         [ExplicitKey]
         public int? GuestID { get; set; }
 
