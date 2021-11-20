@@ -1,4 +1,5 @@
-﻿using Dapper.Contrib.Extensions;
+﻿
+using Dapper.Contrib.Extensions;
 using FYP_RSVP_MGMT.Helpers;
 using FYP_RSVP_MGMT.Models;
 using FYP_RSVP_MGMT.ViewModels;
@@ -16,23 +17,26 @@ namespace FYP_RSVP_MGMT.Controllers
             return View("Index", guest);
         }
 
+        /* Create or Update a guest RSVP Response */
+
         public IActionResult CreateUpdate(GuestListViewModel guest)
         {
             if (ModelState.IsValid)
             {
                 using (var db = DbHelpers.GetConnection())
                 {
-
+                    /* If a guestID is null, the number of existing guests will be counted
+                     * in order to determine what the next guestID will be and will be added 
+                     * asynchronously to the DB in case other actions are on going at the same time */
+                     
                     if (guest.EditableGuest.GuestID == null)
                     {
-                        /* Count the existing IDs and adds the next ID */
                         guest.EditableGuest.GuestID = guest.Guests.Count;
 
                         db.Insert<GuestList>(guest.EditableGuest);
-
                     }
 
-                    /* If the guest already exists, we are updating the details*/
+                    /* If the guest already exists, we are updating their details */
                     else
                     {
                         GuestList dbItem = db.Get<GuestList>(guest.EditableGuest.GuestID);
@@ -43,6 +47,7 @@ namespace FYP_RSVP_MGMT.Controllers
                     }
                 }
 
+                /* When a guest submits their RSVP response, it will bring them to the View Guests page - TEMPORARY MEASURE */
                 return RedirectToAction("ViewGuestList", guest);
             }
 
@@ -50,7 +55,6 @@ namespace FYP_RSVP_MGMT.Controllers
             {
                 return View("ViewGuestList", new GuestList());
             }
-
         }
 
         public IActionResult Edit(int Id)
@@ -68,12 +72,16 @@ namespace FYP_RSVP_MGMT.Controllers
             {
                 GuestList guest = db.Get<GuestList>(Id);
 
+                /* if a guest exists then delete it and return the default action */
+
                 if (guest != null)
                     db.Delete(guest);
-                return RedirectToAction("Index");
 
+                return RedirectToAction("Index");
             }
         }
+
+        /* Allow a user to view all guests that have RSVP'd */
 
         public IActionResult ViewGuestList()
         {

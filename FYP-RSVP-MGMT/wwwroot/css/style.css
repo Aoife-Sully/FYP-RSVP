@@ -1257,17 +1257,14 @@ figure {
 }
 
 /* Aoife's CSS Code starts here */
-    #Home {
-
-    }
-
+  
 #GuestRSVP {
     /* Code taken from https://www.w3schools.com/css/css_align.asp */
     margin: auto;
     width: 50%;
     text-align: center;
     padding: 10px;
-}
+} /* End of code */
 
 /* Code taken from https://www.w3schools.com/css/tryit.asp?filename=trycss_forms */
 
@@ -1306,7 +1303,7 @@ input[type=checkbox] {
 
 #Login {
     color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; /* Technique taken from: https://www.w3schools.com/css/tryit.asp?filename=trycss3_text-shadow_border*/
     text-align: center;
 }
 

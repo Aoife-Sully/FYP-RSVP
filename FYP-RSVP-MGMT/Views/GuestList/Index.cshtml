@@ -4,6 +4,8 @@
     ViewData["Title"] = "Guest RSVP";
 }
 
+@* Form to submit RSVP Response *@
+
 @using (var form = Html.BeginForm("CreateUpdate", "GuestList", FormMethod.Post))
 {
     <div class="container" id="GuestRSVP">
@@ -11,6 +13,9 @@
         <br />
         <br />
         <br />
+
+        @* The Bride and Groom name plus Wedding Details will eventually change 
+            depending on the log in details *@
 
         <h3> Welcome to [Bride] and [Groom]'s Wedding</h3>
         <h4>[Church Location]</h4>
