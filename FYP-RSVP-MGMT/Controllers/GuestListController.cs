@@ -47,8 +47,8 @@ namespace FYP_RSVP_MGMT.Controllers
                     }
                 }
 
-                /* When a guest submits their RSVP response, it will bring them to the View Guests page - TEMPORARY MEASURE */
-                return RedirectToAction("ViewGuestList", guest);
+                /* When a guest submits their RSVP response, it will bring them to a page that acknowledges their response */
+                return RedirectToAction("ResponseReceived", guest);
             }
 
             else
@@ -57,7 +57,7 @@ namespace FYP_RSVP_MGMT.Controllers
             }
         }
 
-        public IActionResult Edit(int Id)
+        public IActionResult EditDetails(int Id)
         {
             GuestListViewModel guest = new GuestListViewModel();
 
@@ -84,6 +84,14 @@ namespace FYP_RSVP_MGMT.Controllers
         /* Allow a user to view all guests that have RSVP'd */
 
         public IActionResult ViewGuestList()
+        {
+            GuestListViewModel guest = new GuestListViewModel();
+
+            return View(guest);
+        }
+
+        /* Acknowledges that the guests response has been received */ 
+        public IActionResult ResponseReceived()
         {
             GuestListViewModel guest = new GuestListViewModel();
 

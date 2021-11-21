@@ -1257,8 +1257,8 @@ figure {
 }
 
 /* Aoife's CSS Code starts here */
-  
-#GuestRSVP {
+
+#GuestRSVP, #AccountLogin, #AccountSignup {
     /* Code taken from https://www.w3schools.com/css/css_align.asp */
     margin: auto;
     width: 50%;
@@ -1324,4 +1324,13 @@ th, td {
 
 #rsvp:nth-child(even) {
     background-color: #fae1dd;
+}
+
+#ResponseReceived {
+    text-align:center;
+}
+
+.btnHome {
+    background-color: #white;
+    text-align:center;
 }
