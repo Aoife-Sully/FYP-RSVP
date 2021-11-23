@@ -12,25 +12,37 @@ namespace FYP_RSVP_MGMT.Models
         
     {      
 
-
         [ExplicitKey]
         public int? GuestID { get; set; }
+
 
         [Required]
         public string GuestName { get; set; }
 
+
         [Required]
         public string GuestType { get; set; }
 
+
         [Required]
+        [EmailAddress]
         public string ContactDetails { get; set; }
+
+
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+
 
         public bool PlusOne { get; set; }
 
+
         public string PlusOneName { get; set; }
+
 
         [Required]
         public string GuestResponse { get; set; }
+
     }
 
    

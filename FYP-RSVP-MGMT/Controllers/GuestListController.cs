@@ -28,7 +28,7 @@ namespace FYP_RSVP_MGMT.Controllers
                     /* If a guestID is null, the number of existing guests will be counted
                      * in order to determine what the next guestID will be and will be added 
                      * asynchronously to the DB in case other actions are on going at the same time */
-                     
+
                     if (guest.EditableGuest.GuestID == null)
                     {
                         guest.EditableGuest.GuestID = guest.Guests.Count + 1;
@@ -90,13 +90,37 @@ namespace FYP_RSVP_MGMT.Controllers
             return View(guest);
         }
 
-        /* Acknowledges that the guests response has been received */ 
+        /* Acknowledges that the guests response has been received */
         public IActionResult ResponseReceived()
         {
             GuestListViewModel guest = new GuestListViewModel();
 
             return View(guest);
         }
+
+
+        /*  LOGIN AND SIGNUP*/
+        /* Code taken and adapted from https://qawithexperts.com/article/asp-net/how-to-create-login-registration-page-in-mvc-with-database-a/170 */
+
+        public IActionResult UserLogin(LoginDetailsViewModel user)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var db = DbHelpers.GetConnection())
+                {
+
+                }
+            }
+
+            return View();
+        }
+
+
+        public IActionResult UserSignUp()
+        {
+            return View();
+        }
+
     }
 
 }

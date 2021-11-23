@@ -13,17 +13,17 @@ namespace FYP_RSVP_MGMT.ViewModels
         {
             using (var db = DbHelpers.GetConnection())
             {
-            //    this.EditableUser = new UserList();
+                this.EditableUser = new UserList();
 
-             //   this.Users = db.Query<UserList>("Select * From LoginDetails").ToList();
+                this.Users = db.Query<UserList>("Select * From LoginDetails").ToList();
             }
         }
 
     }
 
-     //public List<UserList> Users { get; set; }
+     public List<UserList> Users { get; set; }
 
         /* Holds any instance of an object that is being added/edited/deleted etc */
-    //public UserList EditableUser { get; set; }
+     public UserList EditableUser { get; set; }
     
 }
